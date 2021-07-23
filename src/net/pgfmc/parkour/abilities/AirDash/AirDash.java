@@ -1,6 +1,8 @@
 package net.pgfmc.parkour.abilities.airdash;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -96,6 +98,11 @@ public class AirDash implements Listener {
 		p.getLocation().zero();
 		Vector dir = p.getLocation().getDirection();
 		p.setVelocity(dir.multiply(1.25));
+		
+		for (Player player : Bukkit.getOnlinePlayers())
+		{
+			player.playSound(loc, Sound.ENTITY_BAT_TAKEOFF, 1, 1);
+		}
 		
 		ad.setState(State.Cooldown);
 	}

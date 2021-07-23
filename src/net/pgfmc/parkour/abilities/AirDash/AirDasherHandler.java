@@ -54,7 +54,6 @@ public class AirDasherHandler {
             		if (!p.getWorld().getBlockAt(loc).isPassable()) // If below them is not air
             		{
             			ad.setState(State.Ground);
-            			return;
             		} else // If below them is air
             		{
             			if (ad.getState() == State.Ground)
