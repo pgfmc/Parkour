@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -80,6 +81,18 @@ public class AirDash implements Listener {
 	}
 */
 	
+	@EventHandler
+	public void onElytra(EntityToggleGlideEvent e)
+	{
+		if (!(e.getEntity() instanceof Player)) { return; }
+		Player p = (Player) e.getEntity();
+		AirDasher ad = handler.getAirDasher(p);
+		
+		if (ad.getState() == State.Cooldown)
+		{
+			ad.setState(State.Ready);
+		}
+	}
 	
 	@EventHandler
 	public void onDash(PlayerInteractEvent e)
@@ -97,11 +110,17 @@ public class AirDash implements Listener {
 		
 		p.getLocation().zero();
 		Vector dir = p.getLocation().getDirection();
-		p.setVelocity(dir.multiply(1.25));
+		p.setVelocity(dir.multiply(1.1f));
 		
 		for (Player player : Bukkit.getOnlinePlayers())
 		{
-			player.playSound(loc, Sound.ENTITY_BAT_TAKEOFF, 1, 1);
+			player.playSound(loc, Sound.ENTITY_BAT_LOOP, 0.70f, 1.75f);
+		}
+		
+		if (p.isGliding())
+		{
+			ad.setState(State.Gliding);
+			return;
 		}
 		
 		ad.setState(State.Cooldown);

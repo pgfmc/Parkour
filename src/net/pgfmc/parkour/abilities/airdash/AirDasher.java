@@ -12,6 +12,7 @@ public class AirDasher implements Listener {
 	public enum State {
 		Ready,
 		Cooldown,
+		Gliding,
 		Ground
 	};
 	
