@@ -1,4 +1,4 @@
-package net.pgfmc.parkour.abilities.airdash;
+package net.pgfmc.parkour.abilities.AirDash;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -13,7 +13,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.util.Vector;
 
-import net.pgfmc.parkour.abilities.airdash.AirDasher.State;
+import net.pgfmc.parkour.abilities.AirDash.AirDasher.State;
 
 public class AirDash implements Listener {
 	

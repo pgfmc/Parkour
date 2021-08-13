@@ -1,4 +1,4 @@
-package net.pgfmc.parkour.abilities.airdash;
+package net.pgfmc.parkour.abilities.AirDash;
 
 import java.util.LinkedList;
 
