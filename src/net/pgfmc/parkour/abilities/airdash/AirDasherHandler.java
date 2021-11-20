@@ -1,4 +1,4 @@
-package net.pgfmc.parkour.abilities.AirDash;
+package net.pgfmc.parkour.abilities.airdash;
 
 import java.util.LinkedList;
 
@@ -7,7 +7,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import net.pgfmc.parkour.Main;
-import net.pgfmc.parkour.abilities.AirDash.AirDasher.State;
+import net.pgfmc.parkour.abilities.airdash.AirDasher.State;
 
 public class AirDasherHandler {
 	

@@ -2,8 +2,8 @@ package net.pgfmc.parkour;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import net.pgfmc.parkour.abilities.AirDash.AirDash;
-import net.pgfmc.parkour.abilities.AirDash.AirDasherHandler;
+import net.pgfmc.parkour.abilities.airdash.AirDash;
+import net.pgfmc.parkour.abilities.airdash.AirDasherHandler;
 
 public class Main extends JavaPlugin {
 	
